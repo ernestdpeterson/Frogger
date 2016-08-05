@@ -28,7 +28,7 @@ Enemy.prototype.update = function(dt) {
     else{
         this.x = -2;
     }
-    
+
     if(player.x >= this.x -30 && player.x <= this.x + 30){
         if(player.y >= this.y - 30 && player.y <= this.y + 30){
             this.reset();
@@ -53,19 +53,19 @@ var Player = function(){
 
 Player.prototype.update = function(){
     if(this.ctlKey === 'left' && this.x > 0){
-        this.x = this.x -50;
+        this.x = this.x -100;
     }
     else if(this.ctlKey === 'right' && this.x != 400){
-        this.x = this.x + 50;
+        this.x = this.x + 100;
     }
     else if(this.ctlKey === 'up'){
-        this.y = this.y - 50;
+        this.y = this.y - 90;
     }
     else if(this.ctlKey === 'down' && this.y != 400){
-        this.y = this.y + 50;
+        this.y = this.y + 90;
     }
     this.ctlKey =null;
-    
+
     //Goal
     if(this.y < 25){
         this.reset();
@@ -87,9 +87,9 @@ var allEnemies = [];
 
 (function setEnemies(){
     allEnemies.push(new Enemy(-2, 60));
-    allEnemies.push(new Enemy(-2, 100));
-    allEnemies.push(new Enemy(-2, 150));
+    allEnemies.push(new Enemy(-2, 140));
     allEnemies.push(new Enemy(-2, 220));
+    allEnemies.push(new Enemy(-2, 300));
 }());
 
 var player = new Player();
