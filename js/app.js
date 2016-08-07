@@ -12,7 +12,7 @@ var Enemy = function(x, y) {
 };
 
 Object.prototype.reset = function(){
-    player.x = 200;
+    player.x = 300;
     player.y = 400;
 };
 
@@ -22,7 +22,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    if(this.x <= 550){
+    if(this.x <= 750){
         this.x += this.speed * dt;
     }
     else{
@@ -41,13 +41,19 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+var Gem = function(x,y) {
+    this.sprite = 'Gem Green.png';
+    this.x = l;
+    this.y = r;
+}
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 
 var Player = function(){
-    this.sprite = 'images/char-boy.png';
-    this.x = 200;
+    this.sprite = 'images/char-horn-girl.png';
+    this.x = 300;
     this.y = 400;
 };
 
@@ -55,7 +61,7 @@ Player.prototype.update = function(){
     if(this.ctlKey === 'left' && this.x > 0){
         this.x = this.x -100;
     }
-    else if(this.ctlKey === 'right' && this.x != 400){
+    else if(this.ctlKey === 'right' && this.x != 600){
         this.x = this.x + 100;
     }
     else if(this.ctlKey === 'up'){
