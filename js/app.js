@@ -41,11 +41,62 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var Gem = function(x,y) {
-    this.sprite = 'Gem Green.png';
-    this.x = l;
-    this.y = r;
-}
+var cn = [0, 100, 200, 300, 400, 500, 600];
+var rn = [60, 140, 220, 300];
+var cNum;
+var cnr;
+var rNum;
+var rnr;
+
+/*(function(){
+    cNum = Math.round(Math.random() * 10);
+    rNum = Math.round(Math.random() * 10);
+    if(cNum <= 6){
+        cnr = cNum;
+    }
+    else{
+        cnr = cNum - 4;
+    }
+    if(rNum <= 3){
+        rnr = rNum;
+    }
+    else if(rNum > 3 && rNum <= 6){
+        rnr = rNum - 3;
+    }
+    else{
+        rnr = rNum - 7;
+    }
+
+}())*/
+
+console.log('cnr is:  ' + cnr + '  rnr is:  ' + rnr + '  cNum is:  ' + cNum);
+
+var Gem = function(){
+    this.sprite = 'images/Gem Blue.png';
+    cNum = Math.round(Math.random() * 10);
+    rNum = Math.round(Math.random() * 10);
+    if(cNum <= 6){
+        cnr = cNum;
+    }
+    else{
+        cnr = cNum - 4;
+    }
+    if(rNum <= 3){
+        rnr = rNum;
+    }
+    else if(rNum > 3 && rNum <= 6){
+        rnr = rNum - 3;
+    }
+    else{
+        rnr = rNum - 7;
+    }
+    this.x = cn[cnr];
+    this.y = rn[rnr];
+};
+
+Gem.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -76,6 +127,12 @@ Player.prototype.update = function(){
     if(this.y < 25){
         this.reset();
     }
+    //Gem
+    if(this.x >= cn[cnr] -30 && this.x <= cn[cnr] + 30){
+        if(this.y >= rn[rnr] - 30 && this.y <= rn[rnr] + 30){
+            this.reset();
+        }
+    }
 }
 
 // Input handler for player
@@ -99,6 +156,7 @@ var allEnemies = [];
 }());
 
 var player = new Player();
+var gem = new Gem();
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
