@@ -48,7 +48,7 @@ var cnr;
 var rNum;
 var rnr;
 
-/*(function(){
+function randFunc(){
     cNum = Math.round(Math.random() * 10);
     rNum = Math.round(Math.random() * 10);
     if(cNum <= 6){
@@ -67,29 +67,14 @@ var rnr;
         rnr = rNum - 7;
     }
 
-}())*/
+};
+
+randFunc();
 
 console.log('cnr is:  ' + cnr + '  rnr is:  ' + rnr + '  cNum is:  ' + cNum);
 
 var Gem = function(){
     this.sprite = 'images/Gem Blue.png';
-    cNum = Math.round(Math.random() * 10);
-    rNum = Math.round(Math.random() * 10);
-    if(cNum <= 6){
-        cnr = cNum;
-    }
-    else{
-        cnr = cNum - 4;
-    }
-    if(rNum <= 3){
-        rnr = rNum;
-    }
-    else if(rNum > 3 && rNum <= 6){
-        rnr = rNum - 3;
-    }
-    else{
-        rnr = rNum - 7;
-    }
     this.x = cn[cnr];
     this.y = rn[rnr];
 };
@@ -131,9 +116,11 @@ Player.prototype.update = function(){
     if(this.x >= cn[cnr] -30 && this.x <= cn[cnr] + 30){
         if(this.y >= rn[rnr] - 30 && this.y <= rn[rnr] + 30){
             this.reset();
+            gem.x = 0;
+            gem.y = 60;
         }
     }
-}
+};
 
 // Input handler for player
 Player.prototype.handleInput = function(e){
