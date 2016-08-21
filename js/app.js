@@ -14,6 +14,9 @@ var Enemy = function(x, y) {
 Object.prototype.reset = function(){
     player.x = 300;
     player.y = 400;
+    randFunc();
+    gem.x = cn[cnr];
+    gem.y = rn[rnr];
 };
 
 // Update the enemy's position, required method for game
@@ -116,8 +119,6 @@ Player.prototype.update = function(){
     if(this.x >= cn[cnr] -30 && this.x <= cn[cnr] + 30){
         if(this.y >= rn[rnr] - 30 && this.y <= rn[rnr] + 30){
             this.reset();
-            gem.x = 0;
-            gem.y = 60;
         }
     }
 };
