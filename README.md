@@ -1,6 +1,18 @@
-frontend-nanodegree-arcade-game
-===============================
+# Udacity Frogger Clone
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Intalation
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+If you would like a copy on your local machine make sure that all files contained in the Frogger folder are coppied and installed in the same location.
+This can be acomplished by:
+* manualy copying all files and folders.
+    - warning: directory structure must be maintained (example: all files in the js folder must be copied to the js folder on your machine). 
+* downloading the repository and uncompressing the file.
+* cloning the repository. 
+
+## Playing the game
+
+* Open the `index.html` file by double clicking it or right clicking and selecting "open".
+
+* Move your character with the arrow keys.
+
+* The game is won when you have collected a gem or reached the water.
