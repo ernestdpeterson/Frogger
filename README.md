@@ -1,10 +1,10 @@
 # Udacity Frogger Clone
 
-## Intalation
+## Installation
 
-If you would like a copy on your local machine make sure that all files contained in the Frogger folder are coppied and installed in the same location.
-This can be acomplished by:
-* manualy copying all files and folders.
+If you would like a copy on your local machine make sure that all files contained in the Frogger folder are copied and installed in the same location.
+This can be accomplished by:
+* manually copying all files and folders.
     - warning: directory structure must be maintained (example: all files in the js folder must be copied to the js folder on your machine). 
 * downloading the repository and uncompressing the file.
 * cloning the repository. 
